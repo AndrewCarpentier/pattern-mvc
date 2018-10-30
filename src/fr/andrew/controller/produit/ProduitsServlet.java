@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 @WebServlet("/produits")
 public class ProduitsServlet extends HttpServlet {
-    ProduitsBusiness produitBusiness = new ProduitsBusiness();
+    private ProduitsBusiness produitsBusiness = new ProduitsBusiness();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -21,7 +21,7 @@ public class ProduitsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("produit", (ArrayList)produitBusiness.getListeProduit());
+        request.setAttribute("produit", (ArrayList)produitsBusiness.getListeProduit());
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/produit/produits.jsp").forward(request,response);
     }

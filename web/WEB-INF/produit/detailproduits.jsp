@@ -15,9 +15,9 @@
 </head>
 <body>
     <div id="produits-container-image" class="containerimg">
-        <img src="${param.img }" alt="${param.nom }" id="${param.nom }" />
-        <p class="nom-produit">${param.nom }</p>
-        <p class="prix">${param.prix }€</p>
+        <img src="${produit.getUrlImage() }" alt="${produit.getNom() }" id="${produit.getNom() }" />
+        <p class="nom-produit">${produit.getNom() }</p>
+        <p class="prix">${produit.getPrix() }€</p>
     </div>
 </body>
 </html>
